@@ -1247,7 +1247,45 @@ La livraison gratuit
     </div>
 </body>
 </html>
+<style>
+    /* ===== PROMO BANNER ===== */
+.promo-banner {
+  width: 100%;
+  height: 20px;
+  background-color:#ffffbf ;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+}
 
+.promo-scroll {
+  display: flex;
+  white-space: nowrap;
+  align-items: center;
+  height: 100%;
+  /* Animation will be added by JavaScript */
+}
+
+.promo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 0 15px;
+  padding: 0 12px;
+  color: black;
+  font-weight: bold;
+  font-size: 11px;
+  height: 100%;
+  line-height: 20px;
+  
+  border-radius: 10px;
+  transition: all 0.2s ease;
+  min-width: max-content;
+}
+</style>
 <script>
 const video = document.getElementById('heroVideo');
 
