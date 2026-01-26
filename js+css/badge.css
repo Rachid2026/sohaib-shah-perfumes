@@ -371,7 +371,17 @@
     transform: skewX(-20deg);
     }
 
-
+@media (max-width: 768px) {
+    
+.ingredients-text {
+    color: #e0e0e0;
+    font-size: 4rem;
+    line-height: 5;
+    margin-bottom: -5px;
+    text-align: center;
+    padding: 0 10px;
+}
+}
 
 
 /* للهواتف الصغيرة */
@@ -386,3 +396,4 @@
     padding: 0 10px;
 }
 }
+
