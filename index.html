@@ -1690,3 +1690,162 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
     </script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+/* =========================
+   🔴 تفعيل / تعطيل
+========================= */
+const ENABLE_POPUP = true;
+if (!ENABLE_POPUP) return;
+
+/* =========================
+   ✨ العبارات (3 فقط)
+========================= */
+const messages = [
+  {
+    text: "ليس كل عطر يُشرح… بعضه يُحَس",
+    perfume: "ساحر القلوب",
+    img: "images/K5.jpg",
+    time: "Signature",
+    city: "Sohaib shah"
+  },
+  {
+    text: "🤍 اختيار عشاق الفخامة",
+    perfume: "RED SEXY",
+    img: "images/P1.jpg",
+    time: "Exclusive",
+    city: "Sohaib Shah"
+  },
+  {
+    text: "🌒 أثر يبقى… حتى بعد الرحيل",
+    perfume: "المغربية الأصيلة",
+    img: "images/G1.jpg",
+    time: "Signature",
+    city: "Sohaib shah"
+  }
+];
+
+/* =========================
+   📦 إنشاء الحاوية
+========================= */
+let popup = document.getElementById("lux-popup-wrapper");
+
+if (!popup) {
+  popup = document.createElement("div");
+  popup.id = "lux-popup-wrapper";
+  document.body.appendChild(popup);
+}
+
+popup.style.cssText = `
+  position: fixed;
+  bottom: 25px;
+  right: -420px;
+  width: 330px;
+  z-index: 9999;
+  font-family: Arial, sans-serif;
+  transition: right 0.5s ease;
+`;
+
+/* =========================
+   🎬 اختيار رسالة عشوائية
+========================= */
+const d = messages[Math.floor(Math.random() * messages.length)];
+
+popup.innerHTML = `
+  <div class="lux-popup-box">
+    <img src="${d.img}" alt="">
+    <div class="lux-content">
+      <div class="lux-text">${d.text}</div>
+      <div class="lux-perfume">${d.perfume}</div>
+      <div class="lux-meta">
+        <span>${d.time}</span>
+        <span>${d.city}</span>
+      </div>
+    </div>
+  </div>
+`;
+
+/* =========================
+   ⏱️ التوقيت
+========================= */
+
+/* دخول */
+setTimeout(() => {
+  popup.style.right = "20px";
+}, 200);
+
+/* اهتزاز قبل الخروج */
+setTimeout(() => {
+  popup.querySelector(".lux-popup-box")?.classList.add("shake");
+}, 7000);
+
+/* خروج */
+setTimeout(() => {
+  popup.style.right = "-420px";
+}, 8000);
+
+/* =========================
+   🎨 CSS
+========================= */
+const style = document.createElement("style");
+style.textContent = `
+.lux-popup-box{
+  display:flex;
+  gap:12px;
+  background:#fff;
+  padding:14px;
+  border-radius:16px;
+  box-shadow:0 12px 26px rgba(0,0,0,0.28);
+}
+
+.lux-popup-box img{
+  width:52px;
+  height:52px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+.lux-content{
+  flex:1;
+}
+
+.lux-text{
+  font-size:13.5px;
+  color:#333;
+  line-height:1.4;
+}
+
+.lux-perfume{
+  font-weight:600;
+  color:#ffbd15;
+  margin-top:3px;
+}
+
+.lux-meta{
+  display:flex;
+  justify-content:space-between;
+  font-size:11.5px;
+  color:#777;
+  margin-top:5px;
+}
+
+/* اهتزاز */
+.shake{
+  animation: shake 0.45s ease;
+}
+
+@keyframes shake{
+  0%{transform:translateX(0)}
+  20%{transform:translateX(-6px)}
+  40%{transform:translateX(6px)}
+  60%{transform:translateX(-6px)}
+  80%{transform:translateX(6px)}
+  100%{transform:translateX(0)}
+}
+`;
+document.head.appendChild(style);
+
+});
+</script>
