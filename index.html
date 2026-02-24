@@ -121,7 +121,63 @@
             <div class="products-wrapper" id="productsWrapper">
                 <!-- Homme Products -->
 
+                <div class="product-card" data-category="homme">
+    
+    <!-- علامة العرض -->
+    <div class="promo-badge">
+        <span>فقط ب 180 درهم</span>
+    </div>
+
+    <div class="product-img-container">
+        <div class="flip-card">
+            <div class="flip-card-inner">
                 
+                <!-- الوجه الأمامي -->
+                <div class="flip-card-front">
+                    <img src="images/jj.png" alt="Dragon Perfume">
+                </div>
+                
+                <!-- الوجه الخلفي -->
+                <div class="flip-card-back">
+                    <div class="ingredients-content">
+                        <p class="ingredients-text">
+                            
+                            📖 <strong>Catalogue des parfums</strong><br>
+                            
+                            اكتشف مجموعتنا الكاملة من العطور الفاخرة
+                            المختارة بعناية لتناسب جميع الأذواق.
+                            
+                            <br><br>
+                            داخل الكتالوج ستجد:
+                            
+                            <br><br>
+                            • عطور رجالية جذابة  
+                            • عطور نسائية راقية  
+                            • عطور مشتركة Unisexe  
+                            • أفضل العروض والباقات
+                            
+                            <br><br>
+                            اضغط على <strong>Voir Pack</strong>
+                            لرؤية الباقة الكاملة والعطور المتوفرة.
+                            
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <button class="add-to-cart">
+        <i class="fas fa-plus"></i>
+    </button>
+
+    <div class="product-info">
+        <a href="model.html" class="voir-pack">voir pack</a>
+        <span class="price">180 dh</span>
+    </div>
+
+                </div>
                 
 <div class="product-card" data-category="homme">
     <div class="promo-badge">
@@ -1295,6 +1351,51 @@ La livraison gratuit
   transition: all 0.2s ease;
   min-width: max-content;
 }
+
+
+.product-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+/* زر voir pack */
+.voir-pack{
+    background: linear-gradient(45deg,#ff0000,#ff5a5a);
+    color: white;
+text-decoration: none;
+    
+    border: none;
+    padding: 10px 22px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(255,0,0,0.4);
+}
+
+/* hover */
+.voir-pack:hover{
+    transform: scale(1.08);
+    box-shadow: 0 8px 20px rgba(255,0,0,0.6);
+}
+
+/* click */
+.voir-pack:active{
+    transform: scale(0.95);
+}
+
+/* الثمن */
+.price{
+    font-size: 16px;
+    font-weight: bold;
+    color: #222;
+}
+
+    
 </style>
 <script>
 const video = document.getElementById('heroVideo');
